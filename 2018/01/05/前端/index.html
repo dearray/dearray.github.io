@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/01/05/前端/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1.单行超过部分用…代替123456&amp;#123;    word-break:keep-all;    white-space:nowrap;    overflow:hidden;    text-overflow:ellipsis;&amp;#125; 2.多行超过部分用…代替123456789&amp;#123;    word-break:break-all;    text-overflow: -o-e">
-<meta property="og:updated_time" content="2018-01-05T02:15:18.727Z">
+<meta property="og:updated_time" content="2018-01-05T02:22:33.875Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端">
 <meta name="twitter:description" content="1.单行超过部分用…代替123456&amp;#123;    word-break:keep-all;    white-space:nowrap;    overflow:hidden;    text-overflow:ellipsis;&amp;#125; 2.多行超过部分用…代替123456789&amp;#123;    word-break:break-all;    text-overflow: -o-e">
@@ -291,14 +291,9 @@
         <h4 id="1-单行超过部分用…代替"><a href="#1-单行超过部分用…代替" class="headerlink" title="1.单行超过部分用…代替"></a>1.单行超过部分用…代替</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    word-break:keep-all;</span><br><span class="line">    white-space:nowrap;</span><br><span class="line">    overflow:hidden;</span><br><span class="line">    text-overflow:ellipsis;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="2-多行超过部分用…代替"><a href="#2-多行超过部分用…代替" class="headerlink" title="2.多行超过部分用…代替"></a>2.多行超过部分用…代替</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    word-break:break-all;</span><br><span class="line">    text-overflow: -o-ellipsis-lastline;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">    text-overflow: ellipsis;</span><br><span class="line">    display: -webkit-box;</span><br><span class="line">    -webkit-line-clamp: 2;</span><br><span class="line">    -webkit-box-orient: vertical;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="3-按键浏览器的兼容性"><a href="#3-按键浏览器的兼容性" class="headerlink" title="3.按键浏览器的兼容性"></a>3.按键浏览器的兼容性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;.text-search&apos;).keydown(function(e)&#123;</span><br><span class="line">	if(e.keyCode == &apos;13&apos;)&#123;</span><br><span class="line">	e.preventDefault();</span><br><span class="line">	var search_words = $(&apos;.text-search&apos;).val();</span><br><span class="line">	var url = &quot;/dev/requirements/project-list?keywords=&quot;+search_words;</span><br><span class="line">	window.location.href=url;	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="4-jq中attr-和data-区别"><a href="#4-jq中attr-和data-区别" class="headerlink" title="4.jq中attr()和data()区别"></a>4.jq中attr()和data()区别</h4><p><strong>两者都可以获取值和设置值</strong></p>
-<ol>
-<li>attr()操作的是jquery对象，由于对象的属性值保存在内存当中，所以可能与视图中元素的属性值不一致；</li>
-<li>data()操作的是DOM元素，和视图中元素的属性值保持一致；</li>
-<li>attr()和data()最好不要混用，否则可能会出现一种方法设置值，用另一种方法取值会取不到。</li>
-</ol>
+<h4 id="4-jq中attr-和data-区别"><a href="#4-jq中attr-和data-区别" class="headerlink" title="4.jq中attr()和data()区别"></a>4.jq中attr()和data()区别</h4><p>　　两者都可以获取值和设置值<br>　　1. attr()操作的是jquery对象，由于对象的属性值保存在内存当中，所以可能与视图中元素的属性值不一致；<br>　　2. data()操作的是DOM元素，和视图中元素的属性值保持一致；<br>　　3. attr()和data()最好不要混用，否则可能会出现一种方法设置值，用另一种方法取值会取不到。</p>
 <h4 id="5-js时间转换时间戳函数"><a href="#5-js时间转换时间戳函数" class="headerlink" title="5.js时间转换时间戳函数"></a>5.js时间转换时间戳函数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Date.parse(new Date())/1000;</span><br></pre></td></tr></table></figure>
-<p><strong>如果是特定的日期转换为时间戳，必须要类似’2018/12/12’的格式，不能是’2018-12-12’格式，否则会有浏览器兼容问题。如：</strong></p>
+<p><em>如果是特定的日期转换为时间戳，必须要类似’2018/12/12’的格式，不能是’2018-12-12’格式，否则会有浏览器兼容问题。如：</em></p>
 
       
     </div>
@@ -310,7 +305,7 @@
         <p><span>本文标题:</span><a href="/2018/01/05/前端/">前端</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">dearray</a></p>
         <p><span>发布时间:</span>2018-01-05, 10:09:57</p>
-        <p><span>最后更新:</span>2018-01-05, 10:15:18</p>
+        <p><span>最后更新:</span>2018-01-05, 10:22:33</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/01/05/前端/" title="前端">http://yoursite.com/2018/01/05/前端/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/01/05/前端/　　作者: dearray" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
