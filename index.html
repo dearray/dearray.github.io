@@ -388,10 +388,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h4 id="1-php判断是否是ajax请求"><a href="#1-php判断是否是ajax请求" class="headerlink" title="1.php判断是否是ajax请求"></a>1.php判断是否是ajax请求</h4><p>有时我们需要判断是不是ajax请求来决定模块输出还是json格式输出。 </p>
-<pre><code>原理：在发送ajax请求的时候，我们可以通过XMLHttpRequest这个对象，创建自定义的header头信息， 在jquery框架中，对于通过它的$.ajax, $.get, or $.post方法请求网页内容时，它会向服务器传递一个HTTP_X_REQUESTED_WITH的参数，php中就是在header一层判断是否是ajax请求，对应的根据$_SERVER[&apos;HTTP_X_REQUESTED_WITH&apos;]判断。
-</code></pre><pre><code>
-</code></pre>
+        <h4 id="1-php判断是否是ajax请求"><a href="#1-php判断是否是ajax请求" class="headerlink" title="1.php判断是否是ajax请求"></a>1.php判断是否是ajax请求</h4><p>　　有时我们需要判断是不是ajax请求来决定模块输出还是json格式输出。<br>　　原理：在发送ajax请求的时候，我们可以通过XMLHttpRequest这个对象，创建自定义的header头信息， 在jquery框架中，对于通过它的$.ajax, $.get, or $.post方法请求网页内容时，它会向服务器传递一个HTTP_X_REQUESTED_WITH的参数，php中就是在header一层判断是否是ajax请求，对应的根据$_SERVER[‘HTTP_X_REQUESTED_WITH’]判断。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function is_ajax()</span><br><span class="line">&#123;</span><br><span class="line">    return !empty($_SERVER[&apos;HTTP_X_REQUESTED_WITH&apos;]) &amp;&amp; strtolower($_SERVER[&apos;HTTP_X_REQUESTED_WITH&apos;]) == &apos;xmlhttprequest&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>　　ajax跨域只能指定jsonp格式的数据，这个就不是XMLHttpRequest对象了，就算你自定义一个$_SERVER[‘HTTP_X_REQUESTED_WITH’]也是没有意义的,ajax跨域就不能使用此方法判断了。</p>
+
       
     </div>
     
