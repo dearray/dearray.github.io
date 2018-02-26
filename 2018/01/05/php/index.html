@@ -15,13 +15,16 @@
 
 
 
+<meta name="description" content="1.php判断是否是ajax请求有时我们需要判断是不是ajax请求来决定模块输出还是json格式输出。  原理：在发送ajax请求的时候，我们可以通过XMLHttpRequest这个对象，创建自定义的header头信息， 在jquery框架中，对于通过它的$.ajax, $.get, or $.post方法请求网页内容时，它会向服务器传递一个HTTP_X_REQUESTED_WITH的参数，php">
 <meta property="og:type" content="article">
 <meta property="og:title" content="php">
 <meta property="og:url" content="http://yoursite.com/2018/01/05/php/index.html">
 <meta property="og:site_name" content="笔记">
-<meta property="og:updated_time" content="2018-01-05T05:58:41.397Z">
+<meta property="og:description" content="1.php判断是否是ajax请求有时我们需要判断是不是ajax请求来决定模块输出还是json格式输出。  原理：在发送ajax请求的时候，我们可以通过XMLHttpRequest这个对象，创建自定义的header头信息， 在jquery框架中，对于通过它的$.ajax, $.get, or $.post方法请求网页内容时，它会向服务器传递一个HTTP_X_REQUESTED_WITH的参数，php">
+<meta property="og:updated_time" content="2018-02-26T05:54:49.313Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php">
+<meta name="twitter:description" content="1.php判断是否是ajax请求有时我们需要判断是不是ajax请求来决定模块输出还是json格式输出。  原理：在发送ajax请求的时候，我们可以通过XMLHttpRequest这个对象，创建自定义的header头信息， 在jquery框架中，对于通过它的$.ajax, $.get, or $.post方法请求网页内容时，它会向服务器传递一个HTTP_X_REQUESTED_WITH的参数，php">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -277,7 +280,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <h4 id="1-php判断是否是ajax请求"><a href="#1-php判断是否是ajax请求" class="headerlink" title="1.php判断是否是ajax请求"></a>1.php判断是否是ajax请求</h4><p>有时我们需要判断是不是ajax请求来决定模块输出还是json格式输出。 </p>
+<pre><code>原理：在发送ajax请求的时候，我们可以通过XMLHttpRequest这个对象，创建自定义的header头信息， 在jquery框架中，对于通过它的$.ajax, $.get, or $.post方法请求网页内容时，它会向服务器传递一个HTTP_X_REQUESTED_WITH的参数，php中就是在header一层判断是否是ajax请求，对应的根据$_SERVER[&apos;HTTP_X_REQUESTED_WITH&apos;]判断。
+</code></pre><pre><code>
+</code></pre>
       
     </div>
     
@@ -288,7 +294,7 @@
         <p><span>本文标题:</span><a href="/2018/01/05/php/">php</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">dearray</a></p>
         <p><span>发布时间:</span>2018-01-05, 14:09:57</p>
-        <p><span>最后更新:</span>2018-01-05, 13:58:41</p>
+        <p><span>最后更新:</span>2018-02-26, 13:54:49</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/01/05/php/" title="php">http://yoursite.com/2018/01/05/php/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/01/05/php/　　作者: dearray" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -324,7 +330,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-php判断是否是ajax请求"><span class="toc-number">1.</span> <span class="toc-text">1.php判断是否是ajax请求</span></a></li></ol>
         
     </div>
     <style>
