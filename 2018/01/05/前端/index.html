@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/01/05/前端/index.html">
 <meta property="og:site_name" content="笔记">
 <meta property="og:description" content="1.单行超过部分用…代替123456&amp;#123;    word-break:keep-all;    white-space:nowrap;    overflow:hidden;    text-overflow:ellipsis;&amp;#125; 2.多行超过部分用…代替123456789&amp;#123;    word-break:break-all;    text-overflow: -o-e">
-<meta property="og:updated_time" content="2018-02-28T08:30:11.069Z">
+<meta property="og:updated_time" content="2018-02-28T08:34:22.299Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端">
 <meta name="twitter:description" content="1.单行超过部分用…代替123456&amp;#123;    word-break:keep-all;    white-space:nowrap;    overflow:hidden;    text-overflow:ellipsis;&amp;#125; 2.多行超过部分用…代替123456789&amp;#123;    word-break:break-all;    text-overflow: -o-e">
@@ -286,7 +286,7 @@
 <h4 id="4-jq中attr-和data-区别"><a href="#4-jq中attr-和data-区别" class="headerlink" title="4.jq中attr()和data()区别"></a>4.jq中attr()和data()区别</h4><p>　　两者都可以获取值和设置值<br>　　1. attr()操作的是jquery对象，由于对象的属性值保存在内存当中，所以可能与视图中元素的属性值不一致；<br>　　2. data()操作的是DOM元素，和视图中元素的属性值保持一致；<br>　　3. attr()和data()最好不要混用，否则可能会出现一种方法设置值，用另一种方法取值会取不到。</p>
 <h4 id="5-js时间转换时间戳函数"><a href="#5-js时间转换时间戳函数" class="headerlink" title="5.js时间转换时间戳函数"></a>5.js时间转换时间戳函数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Date.parse(new Date())/1000;</span><br></pre></td></tr></table></figure>
 <p>如果是特定的日期转换为时间戳，必须要类似’2018/12/12’的格式，不能是’2018-12-12’格式，否则会有浏览器兼容问题。如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Date.parse(new Date(valid_time_end.replace(/-/g, &quot;/&quot;)))/1000</span><br></pre></td></tr></table></figure></p>
-<h4 id="6-点击其他区域隐藏功能"><a href="#6-点击其他区域隐藏功能" class="headerlink" title="6.点击其他区域隐藏功能"></a>6.点击其他区域隐藏功能</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(document).click(function(e)&#123;</span><br><span class="line">	if(!$(e.target).is($(&apos;.news-contents&apos;).find(&quot;*&quot;)) &amp;&amp; !$(e.target).is($(&apos;.info-li a&apos;)))&#123;</span><br><span class="line">        $(&apos;.news-contents&apos;).animate(&#123;scrollTop:0&#125;,0);</span><br><span class="line">        $(&apos;.news-all&apos;).css(&apos;display&apos;,&apos;none&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="6-点击其他区域隐藏功能"><a href="#6-点击其他区域隐藏功能" class="headerlink" title="6.点击其他区域隐藏功能"></a>6.点击其他区域隐藏功能</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(document).click(function(e)&#123;</span><br><span class="line">	if(!$(e.target).is($(&apos;.news-contents&apos;).find(&quot;*&quot;)) &amp;&amp; !$(e.target).is($(&apos;.info-li a&apos;)))&#123;</span><br><span class="line">        $(&apos;.news-contents&apos;).animate(&#123;scrollTop:0&#125;,0);</span><br><span class="line">        $(&apos;.news-all&apos;).css(&apos;display&apos;,&apos;none&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -297,7 +297,7 @@
         <p><span>Title:</span><a href="/2018/01/05/前端/">前端</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">dearray</a></p>
         <p><span>Created:</span>2018-01-05, 10:09:57</p>
-        <p><span>Updated:</span>2018-02-28, 16:30:11</p>
+        <p><span>Updated:</span>2018-02-28, 16:34:22</p>
         <p>
             <span>Full URL:</span><a class="post-url" href="/2018/01/05/前端/" title="前端">http://yoursite.com/2018/01/05/前端/</a>
             <span class="copy-path" data-clipboard-text="From http://yoursite.com/2018/01/05/前端/　　By dearray" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
@@ -395,7 +395,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/01/09/服务器/">服务器</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/05/mysql/">mysql</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/05/php/">php</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/05/前端/">前端</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/02/28/其他/">其他</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/09/服务器/">服务器</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/05/mysql/">mysql</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/05/php/">php</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/05/前端/">前端</a></li></ul>
 
 
 
