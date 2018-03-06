@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/01/05/前端/index.html">
 <meta property="og:site_name" content="笔记">
 <meta property="og:description" content="1.单行超过部分用…代替123456&amp;#123;    word-break:keep-all;    white-space:nowrap;    overflow:hidden;    text-overflow:ellipsis;&amp;#125; 2.多行超过部分用…代替123456789&amp;#123;    word-break:break-all;    text-overflow: -o-e">
-<meta property="og:updated_time" content="2018-02-28T08:34:22.299Z">
+<meta property="og:updated_time" content="2018-03-06T07:53:04.430Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端">
 <meta name="twitter:description" content="1.单行超过部分用…代替123456&amp;#123;    word-break:keep-all;    white-space:nowrap;    overflow:hidden;    text-overflow:ellipsis;&amp;#125; 2.多行超过部分用…代替123456789&amp;#123;    word-break:break-all;    text-overflow: -o-e">
@@ -287,6 +287,8 @@
 <h4 id="5-js时间转换时间戳函数"><a href="#5-js时间转换时间戳函数" class="headerlink" title="5.js时间转换时间戳函数"></a>5.js时间转换时间戳函数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Date.parse(new Date())/1000;</span><br></pre></td></tr></table></figure>
 <p>如果是特定的日期转换为时间戳，必须要类似’2018/12/12’的格式，不能是’2018-12-12’格式，否则会有浏览器兼容问题。如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Date.parse(new Date(valid_time_end.replace(/-/g, &quot;/&quot;)))/1000</span><br></pre></td></tr></table></figure></p>
 <h4 id="6-点击其他区域隐藏功能"><a href="#6-点击其他区域隐藏功能" class="headerlink" title="6.点击其他区域隐藏功能"></a>6.点击其他区域隐藏功能</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(document).click(function(e)&#123;</span><br><span class="line">	if(!$(e.target).is($(&apos;.news-contents&apos;).find(&quot;*&quot;)) &amp;&amp; !$(e.target).is($(&apos;.info-li a&apos;)))&#123;</span><br><span class="line">        $(&apos;.news-contents&apos;).animate(&#123;scrollTop:0&#125;,0);</span><br><span class="line">        $(&apos;.news-all&apos;).css(&apos;display&apos;,&apos;none&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="7-定位时top和bottom同时存在"><a href="#7-定位时top和bottom同时存在" class="headerlink" title="7.定位时top和bottom同时存在"></a>7.定位时top和bottom同时存在</h4><p>　　对于相对定义元素，如果 bottom 和 top 都是 auto，其计算值则都是 0；如果其中之一为 auto，则取另一个值的相反数；如果二者都不是 auto，bottom 将取 top 值的相反数。</p>
+
       
     </div>
     
@@ -297,7 +299,7 @@
         <p><span>Title:</span><a href="/2018/01/05/前端/">前端</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">dearray</a></p>
         <p><span>Created:</span>2018-01-05, 10:09:57</p>
-        <p><span>Updated:</span>2018-02-28, 16:34:22</p>
+        <p><span>Updated:</span>2018-03-06, 15:53:04</p>
         <p>
             <span>Full URL:</span><a class="post-url" href="/2018/01/05/前端/" title="前端">http://yoursite.com/2018/01/05/前端/</a>
             <span class="copy-path" data-clipboard-text="From http://yoursite.com/2018/01/05/前端/　　By dearray" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
@@ -327,7 +329,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-单行超过部分用…代替"><span class="toc-number">1.</span> <span class="toc-text">1.单行超过部分用…代替</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-多行超过部分用…代替"><span class="toc-number">2.</span> <span class="toc-text">2.多行超过部分用…代替</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-按键浏览器的兼容性"><span class="toc-number">3.</span> <span class="toc-text">3.按键浏览器的兼容性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-jq中attr-和data-区别"><span class="toc-number">4.</span> <span class="toc-text">4.jq中attr()和data()区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-js时间转换时间戳函数"><span class="toc-number">5.</span> <span class="toc-text">5.js时间转换时间戳函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-点击其他区域隐藏功能"><span class="toc-number">6.</span> <span class="toc-text">6.点击其他区域隐藏功能</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-单行超过部分用…代替"><span class="toc-number">1.</span> <span class="toc-text">1.单行超过部分用…代替</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-多行超过部分用…代替"><span class="toc-number">2.</span> <span class="toc-text">2.多行超过部分用…代替</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-按键浏览器的兼容性"><span class="toc-number">3.</span> <span class="toc-text">3.按键浏览器的兼容性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-jq中attr-和data-区别"><span class="toc-number">4.</span> <span class="toc-text">4.jq中attr()和data()区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-js时间转换时间戳函数"><span class="toc-number">5.</span> <span class="toc-text">5.js时间转换时间戳函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-点击其他区域隐藏功能"><span class="toc-number">6.</span> <span class="toc-text">6.点击其他区域隐藏功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-定位时top和bottom同时存在"><span class="toc-number">7.</span> <span class="toc-text">7.定位时top和bottom同时存在</span></a></li></ol>
         
     </div>
     <style>
