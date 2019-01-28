@@ -515,7 +515,7 @@ redis启动客户端    redis-cli
       
           
         <h4 id="1-sql语句-case-when-then-的用法（类似于if-elseif-）"><a href="#1-sql语句-case-when-then-的用法（类似于if-elseif-）" class="headerlink" title="1.sql语句 case when then 的用法（类似于if(){}elseif(){}）"></a>1.sql语句 case when then 的用法（类似于if(){}elseif(){}）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">select *,</span><br><span class="line">case</span><br><span class="line">when is_active = 0 and valid_time_end &gt; &apos;2017-12-21 10:12:14&apos; then 2</span><br><span class="line">when is_active = 1 and valid_time_end &gt; &apos;2017-12-21 10:12:14&apos; and valid_amount &gt; 0 then 3</span><br><span class="line">when is_active = 1 and valid_amount &lt;= 0 then 4</span><br><span class="line">when valid_amount &gt; 0 and valid_time_end &lt; &apos;2017-12-21 10:12:14&apos; then 5</span><br><span class="line">else 6</span><br><span class="line">end</span><br><span class="line">as t from `gs_store`.`ecs_service_coupon` where owner_user_id=4414 and is_delete = 0 order by t limit 0,9;</span><br></pre></td></tr></table></figure>
-
+<h4 id="2-查询的时候，就算有多个索引，InnoDB引擎只会用到一个索引。"><a href="#2-查询的时候，就算有多个索引，InnoDB引擎只会用到一个索引。" class="headerlink" title="2.查询的时候，就算有多个索引，InnoDB引擎只会用到一个索引。"></a>2.查询的时候，就算有多个索引，InnoDB引擎只会用到一个索引。</h4>
       
     </div>
     
@@ -669,7 +669,7 @@ redis启动客户端    redis-cli
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2016-2018 dearray
+                2016-2019 dearray
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
