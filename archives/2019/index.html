@@ -15,16 +15,12 @@
 
 
 
-<meta name="description" content="1.sql语句 case when then 的用法（类似于if(){}elseif(){}）123456789select *,casewhen is_active = 0 and valid_time_end &amp;gt; &amp;apos;2017-12-21 10:12:14&amp;apos; then 2when is_active = 1 and valid_time_end &amp;gt; &amp;apos;2">
-<meta property="og:type" content="article">
-<meta property="og:title" content="mysql">
-<meta property="og:url" content="http://yoursite.com/2018/01/05/mysql/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="笔记">
+<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
 <meta property="og:site_name" content="笔记">
-<meta property="og:description" content="1.sql语句 case when then 的用法（类似于if(){}elseif(){}）123456789select *,casewhen is_active = 0 and valid_time_end &amp;gt; &amp;apos;2017-12-21 10:12:14&amp;apos; then 2when is_active = 1 and valid_time_end &amp;gt; &amp;apos;2">
-<meta property="og:updated_time" content="2019-01-28T10:20:50.900Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mysql">
-<meta name="twitter:description" content="1.sql语句 case when then 的用法（类似于if(){}elseif(){}）123456789select *,casewhen is_active = 0 and valid_time_end &amp;gt; &amp;apos;2017-12-21 10:12:14&amp;apos; then 2when is_active = 1 and valid_time_end &amp;gt; &amp;apos;2">
+<meta name="twitter:title" content="笔记">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +52,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>mysql | 笔记</title>
+<title>Archives: 2019 | 笔记</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -66,8 +62,8 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: true,
-        isArchive: false,
+        isPost: false,
+        isArchive: true,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -244,173 +240,52 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-mysql" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
   
-    <div class="article-meta">
-      <a href="/2018/01/05/mysql/" class="article-date">
-      <time datetime="2018-01-05T06:19:57.000Z" itemprop="datePublished">2018-01-05</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2019/06/06/网址/" class="archive-article-date">
+      <time datetime="2019-06-06T02:09:57.000Z" itemprop="datePublished">06-06</time>
 </a>
 
 
-    </div>
+        </div>
+         
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      mysql
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/06/06/网址/">前端</a>
     </h1>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+        <div class="article-info info-on-archive">
           
-        <h4 id="1-sql语句-case-when-then-的用法（类似于if-elseif-）"><a href="#1-sql语句-case-when-then-的用法（类似于if-elseif-）" class="headerlink" title="1.sql语句 case when then 的用法（类似于if(){}elseif(){}）"></a>1.sql语句 case when then 的用法（类似于if(){}elseif(){}）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">select *,</span><br><span class="line">case</span><br><span class="line">when is_active = 0 and valid_time_end &gt; &apos;2017-12-21 10:12:14&apos; then 2</span><br><span class="line">when is_active = 1 and valid_time_end &gt; &apos;2017-12-21 10:12:14&apos; and valid_amount &gt; 0 then 3</span><br><span class="line">when is_active = 1 and valid_amount &lt;= 0 then 4</span><br><span class="line">when valid_amount &gt; 0 and valid_time_end &lt; &apos;2017-12-21 10:12:14&apos; then 5</span><br><span class="line">else 6</span><br><span class="line">end</span><br><span class="line">as t from `gs_store`.`ecs_service_coupon` where owner_user_id=4414 and is_delete = 0 order by t limit 0,9;</span><br></pre></td></tr></table></figure>
-<h4 id="2-mysql索引"><a href="#2-mysql索引" class="headerlink" title="2.mysql索引"></a>2.mysql索引</h4><pre><code>（1）索引是一种数据结构。
-（2）B树事实上是一种平衡的多叉查找树。
-（3）平衡二叉树是一颗二叉排序树，左右子树的高度差绝对值不超过1，并且左右两个子树均是平衡二叉树。
-（4）B+树所有的关键字全部存储在叶子节点上，非叶子节点可以看成索引部分。
-（5）查询的时候，就算有多个索引，InnoDB引擎只会选择一个索引。
-</code></pre>
-      
-    </div>
-    
-  </div>
-  
-    
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/01/05/mysql/">mysql</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">dearray</a></p>
-        <p><span>发布时间:</span>2018-01-05, 14:19:57</p>
-        <p><span>最后更新:</span>2019-01-28, 18:20:50</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/01/05/mysql/" title="mysql">http://yoursite.com/2018/01/05/mysql/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/01/05/mysql/　　作者: dearray" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
 
-
-
-    <nav id="article-nav">
-        
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/01/09/服务器/">
-                    服务器
-                </a>
-            </div>
-        
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/01/05/php/">
-                    php
-                </a>
-            </div>
-        
-    </nav>
-
-  
-</article>
-
-    <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
-        
-            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-sql语句-case-when-then-的用法（类似于if-elseif-）"><span class="toc-number">1.</span> <span class="toc-text">1.sql语句 case when then 的用法（类似于if(){}elseif(){}）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-mysql索引"><span class="toc-number">2.</span> <span class="toc-text">2.mysql索引</span></a></li></ol>
-        
-    </div>
-    <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-        .toc-level-3 i,
-        .toc-level-3 ol {
-            display: none !important;
-        }
-    </style>
-
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-    <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
-    </script>
-
-
-
-    
-<div class="share">
-    
-        <div class="bdsharebuttonbox">
-            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
-            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
-            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
-            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
-            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
-            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+          
         </div>
-        <script>
-            window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"mysql　| 笔记　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-        </script>
-    
-
-    
-</div>
-
-
-
-
-
-
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
+  
 
     
 
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2018/01/09/服务器/" title="上一篇: 服务器">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/2018/01/05/php/" title="下一篇: php">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/06/06/网址/">前端</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/28/ruby/">ruby</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/07/工具/">工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/28/其他/">其他</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/09/服务器/">服务器</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/05/mysql/">mysql</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/05/php/">php</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/05/前端/">前端</a></li></ul>
-
-
-
-
-    <script>
-        
-    </script>
 </div>
       <footer id="footer">
     <div class="outer">
